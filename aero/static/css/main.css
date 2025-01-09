@@ -104,9 +104,12 @@ nav .cart p {
   right: 0;
   background-color: white;
   z-index: 20;
+  height: 100%;
 }
 #mobile-side-panel #close-button-container {
-  text-align: end;
+  text-align: start;
+  margin-bottom: 8%;
+  margin-top: 13px;
 }
 #mobile-side-panel #close-button-container button {
   width: 40;
@@ -115,16 +118,50 @@ nav .cart p {
   background-color: #ff6969;
   border: none;
   color: white;
+  margin-left: 212;
 }
 #mobile-side-panel .nav-item {
-  border: 2px solid black;
+  margin-bottom: 10%;
+}
+#mobile-side-panel .nav-item .nav-item-clickable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #c6c6c6;
+  padding-bottom: 10px;
+}
+#mobile-side-panel .nav-item .nav-item-clickable a {
+  font-size: 26px;
+  text-decoration: none;
+  color: #000000;
+  margin-left: 10px;
+  font-family: math;
+}
+#mobile-side-panel .nav-item .nav-item-clickable i {
+  margin-right: 10px;
+  font-size: 22px;
+  color: #c6c6c6;
 }
 #mobile-side-panel .dropdown-content {
   display: flex;
   flex-direction: column;
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
   display: none;
 }
+#mobile-side-panel .dropdown-content a {
+  font-size: 20px;
+  margin-bottom: 4%;
+  text-decoration: none;
+  color: #000000;
+  margin-left: 10px;
+  font-family: math;
+}
 
+.mobile-screen-hamburger-pie-menu {
+  display: none;
+}
 .mobile-screen-hamburger-pie-menu button {
   padding: 10px;
   padding-left: 20;
@@ -132,6 +169,14 @@ nav .cart p {
   font-size: 16;
   background-color: white;
   border: none;
+}
+
+#overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(84, 84, 84, 0.6078431373);
+  z-index: 15;
 }
 
 .main-jumbo {
@@ -147,33 +192,6 @@ nav .cart p {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
-}
-.main-jumbo .call {
-  position: absolute;
-  top: 85%;
-  left: 83%;
-  transition: transform(-50%, -50%);
-  background-color: rgba(51, 51, 51, 0.768627451);
-  padding: 25px;
-  border-radius: 20px;
-  display: none;
-}
-.main-jumbo .call p {
-  padding: 0;
-  margin: 0;
-  color: white;
-  font-family: Arial;
-  font-size: 20px;
-}
-.main-jumbo .call .first {
-  display: flex;
-  align-items: center;
-}
-.main-jumbo .call .first i {
-  margin-right: 3px;
-  font-size: 28px;
-  color: rgb(255, 72, 72);
 }
 
 .ad-heaters {
@@ -185,7 +203,6 @@ nav .cart p {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
 }
 .ad-heaters img {
   width: 80%;
@@ -198,7 +215,6 @@ nav .cart p {
   color: white;
   padding-top: 15px;
   padding-bottom: 15px;
-  display: none;
 }
 .wording h2 {
   padding: 0;
@@ -223,7 +239,6 @@ nav .cart p {
   width: 100%;
   position: relative;
   overflow: hidden;
-  display: none;
 }
 .preheat img {
   width: 100%;
@@ -274,7 +289,6 @@ nav .cart p {
   background-color: #1d1d1d;
   padding-top: 15px;
   padding-bottom: 15px;
-  display: none;
 }
 .our-videos h2 {
   color: white;
@@ -311,7 +325,6 @@ nav .cart p {
   margin: auto;
   margin-bottom: 0;
   background-color: rgb(211, 211, 211);
-  display: none;
 }
 .more-info img {
   width: 580px;
@@ -335,7 +348,6 @@ nav .cart p {
   text-align: center;
   padding-top: 25px;
   padding-bottom: 25px;
-  display: none;
 }
 .aerotherm-container h1 {
   font-size: 2rem;
@@ -397,7 +409,6 @@ footer {
   background-color: black;
   color: white;
   position: relative;
-  display: none;
 }
 footer .left-side {
   margin-left: 20px;
@@ -443,11 +454,12 @@ footer .right-side small {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: relative;
     width: 100%;
     margin: auto;
-    background-color: rgba(35, 35, 35, 0.7843137255);
+    background-color: #232323;
     z-index: 1;
+    top: 0;
   }
   nav img {
     width: 160px;
@@ -486,5 +498,182 @@ footer .right-side small {
     align-items: center; /* Vertical centering */
     text-align: center; /* Optional: centers text horizontally */
     color: white; /* Optional: color for the text */
+  }
+  .mobile-screen-hamburger-pie-menu {
+    display: block;
+  }
+  .main-jumbo {
+    height: 200px; /* Adjust height for smaller screens */
+    width: 100%;
+    z-index: 0;
+  }
+  .wording h2 {
+    width: 90%;
+    margin-bottom: 30;
+  }
+  .ad-heaters img {
+    width: 100%;
+  }
+  .preheat img {
+    height: 328;
+    transform: scale(2) translate(2px, -38px); /* Zoom in and adjust position */
+    transform-origin: center; /* Ensure the scaling is centered */
+    width: 100%;
+  }
+  .preheat .why-prehear {
+    position: absolute;
+    top: 5;
+    left: 5;
+    transition: transform(-50%, -50%);
+    padding: 0;
+    margin: 0;
+  }
+  .preheat .why-prehear h5 {
+    font-size: 36px;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #18274d;
+    font-weight: 100;
+  }
+  .preheat .why-prehear p {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-bottom: 17px;
+    color: #18274d;
+  }
+  .preheat .why-prehear button {
+    border: 2px solid #18274d;
+    color: #18274d;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 14px;
+  }
+  .preheat .why-prehear button:hover {
+    background-color: #1d1d1d;
+    color: white;
+    transition: ease-in 0.2s;
+  }
+  .our-videos {
+    padding: 0;
+  }
+  .our-videos h2 {
+    color: white;
+    font-size: 30px;
+    font-family: Arial;
+    margin-left: 2px;
+  }
+  .our-videos .videos {
+    flex-direction: column;
+  }
+  .our-videos .videos .videoI {
+    position: relative;
+  }
+  .our-videos .videos p {
+    position: absolute;
+    top: 23px;
+    left: -8px;
+  }
+  .our-videos .videos video {
+    width: 400;
+  }
+  .more-info {
+    flex-direction: column;
+    padding-top: 33px;
+  }
+  .more-info img {
+    width: 380px;
+    height: 231px;
+  }
+  .more-info .info {
+    width: 92%;
+  }
+  .more-info .info p {
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+  }
+  .aerotherm-container h1 {
+    margin-left: 5px;
+    font-family: math;
+  }
+  .aerotherm-container .containers {
+    width: 90%;
+    flex-direction: column;
+  }
+  .aerotherm-container .containers .user-card {
+    width: 90%;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .aerotherm-container .containers .user-card .info {
+    text-align: left;
+  }
+  .aerotherm-container .containers .user-card .info h2 {
+    margin: 0;
+    font-size: 30px;
+    color: #ffffff;
+    font-family: math;
+  }
+  .aerotherm-container .containers .user-card .info p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: #ffffff;
+    font-family: math;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    position: relative;
+    flex-direction: column;
+  }
+  footer .left-side {
+    margin-left: 1px;
+  }
+  footer .left-side img {
+    width: 311px;
+    height: 88px;
+    margin-left: 33px;
+  }
+  footer .left-side #first {
+    margin-left: 22px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  footer .left-side #second {
+    font-size: 20px;
+  }
+  footer .right-side {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  footer .right-side .footer-links a {
+    color: white;
+    font-family: math;
+    text-decoration: none;
+    font-size: 30;
+    margin-left: 13;
+  }
+  footer .right-side .footer-links a:hover {
+    text-decoration: underline;
+  }
+  footer .right-side small {
+    position: relative;
+    bottom: 0px; /* Distance from the bottom */
+    right: -78px; /* Distance from the right */
+    margin: 0;
   }
 }/*# sourceMappingURL=main.css.map */
